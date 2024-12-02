@@ -85,12 +85,5 @@ public class UserController {
         return ResponseEntity.status(400).body(new ApiResponse("Failed to add product to wishlist"));
     }
 
-    @GetMapping("/getWishlist/{userId}")
-    public ResponseEntity getWishlist(@PathVariable Integer userId) {
-        List<Product> wishlist = userService.getWishlist(userId);
-        if (wishlist==null) {
-            return ResponseEntity.status(200).body(new ApiResponse("Wishlist is empty"));
-        }
-        return ResponseEntity.status(200).body(wishlist);
-    }
+  
 }
